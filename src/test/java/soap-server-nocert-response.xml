@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<soap:Fault>
+			<faultcode>soap:Client</faultcode>
+			<faultstring>Unexpected wrapper element
+				{http://www.w3.org/2001/04/xmlenc#}EncryptedData found. Expected
+				{http://demo.ti.tongtech.com/security/}input.</faultstring>
+		</soap:Fault>
+	</soap:Body>
+</soap:Envelope>
