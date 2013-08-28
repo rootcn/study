@@ -1,0 +1,28 @@
+首先，创建客户端KeyStore和公钥
+
+1、创建私钥和KeyStore：
+keytool -genkey -alias clientprivatekey -keypass keypass -keystore Client_KeyStore.jks -storepass storepass -dname "CN=tongtech.com,C=CN" -keyalg RSA 
+
+2、给私钥进行自签名：
+keytool -selfcert -keystore Client_KeyStore.jks -storepass storepass -alias clientprivatekey -keypass keypass  
+
+3、导出私钥
+keytool -export -alias clientprivatekey -file Client_PublicCert.cer -keystore Client_KeyStore.jks -storepass storepass  
+
+然后创建服务端KeyStore
+1、创建私钥和KeyStore
+keytool -genkey -alias serverprivatekey -keypass keypass -keystore Server_KeyStore.jks -storepass storepass -dname "CN=tongtech.com,C=CN" -keyalg RSA  
+
+2、给私钥进行自签名
+keytool -selfcert -keystore Server_KeyStore.jks -storepass storepass -alias serverprivatekey -keypass keypass  
+
+3、导出私钥
+keytool -export -alias serverprivatekey -file Server_PublicCert.cer -keystore Server_KeyStore.jks -storepass storepass  
+
+接下来，将客户端公钥导入到服务端TrustStore中，将服务端公钥导入到客户端TrustStore中。
+在命令行中输入：
+keytool -import -alias clientpublickey -file Client_PublicCert.cer -keystore Server_TrustStore.jks -storepass storepass  
+
+同理，将服务端公钥导入到客户端TrustStore中
+keytool -import -alias serverpublickey -file Server_PublicCert.cer -keystore Client_TrustStore.jks -storepass storepass  
+

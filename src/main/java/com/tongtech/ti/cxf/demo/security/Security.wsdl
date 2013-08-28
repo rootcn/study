@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="security"
+	targetNamespace="http://demo.ti.tongtech.com/security/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://demo.ti.tongtech.com/security/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://demo.ti.tongtech.com/security/">
+			<xsd:element name="input">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="inputResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="inputRequest">
+		<wsdl:part name="parameters" element="tns:input"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="inputResponse">
+		<wsdl:part name="parameters" element="tns:inputResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ISecuriyDemo">
+		<wsdl:operation name="input">
+			<wsdl:input message="tns:inputRequest"></wsdl:input>
+			<wsdl:output message="tns:inputResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ISecurityBinding" type="tns:ISecuriyDemo">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="input">
+			<soap:operation soapAction="http://demo.ti.tongtech.com/security/input" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ISecuriyService">
+		<wsdl:port name="ISecuriyServicePort" binding="tns:ISecurityBinding">
+			<soap:address location="http://localhost:8080/sec" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>  

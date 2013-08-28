@@ -1,0 +1,88 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+		<wsse:Security
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+			xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+			soap:mustUnderstand="1">
+			<xenc:EncryptedKey xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+				Id="EK-5A5B61515E2939E25613776692000674">
+				<xenc:EncryptionMethod
+					Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" />
+				<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<wsse:SecurityTokenReference>
+						<ds:X509Data>
+							<ds:X509IssuerSerial>
+								<ds:X509IssuerName>CN=tongtech.com,C=CN</ds:X509IssuerName>
+								<ds:X509SerialNumber>1109755317</ds:X509SerialNumber>
+							</ds:X509IssuerSerial>
+						</ds:X509Data>
+					</wsse:SecurityTokenReference>
+				</ds:KeyInfo>
+				<xenc:CipherData>
+					<xenc:CipherValue>YjSNhBCYaRYu/0dxEFP+vZ7MBYGA/jkdQKu+7eEaXY2NSCuyHtDZhoTC1799wnQnzBOt1uz9yDv/zYUk8EIm/oKUXZ8ZN09/OHEzJNXswpWoGXPqHXPgwK5lK2bgeM/4dxCHC+xVja446bBqOqOxjlaO55O3WBATrr/JK4y2qI0bw71Cj9xEsKyK9fMtrr8Yxe/b1y67N7otfVhG1ztnuU28rclO8uxjWNPSFS7i86BIaex1cWLHY5RP9BcRT7RcThyL9GlhjaVdDL+pUfgg4uZnNoBSDM7yzgiXEhjOoL5fuj/Aqhq6L4skP45zOW4ffjC21avxvE52+5C3gUCsLw==
+					</xenc:CipherValue>
+				</xenc:CipherData>
+				<xenc:ReferenceList>
+					<xenc:DataReference URI="#ED-4" />
+				</xenc:ReferenceList>
+			</xenc:EncryptedKey>
+			<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+				Id="SIG-3">
+				<ds:SignedInfo>
+					<ds:CanonicalizationMethod
+						Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="soap" />
+					</ds:CanonicalizationMethod>
+					<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+					<ds:Reference URI="#id-2">
+						<ds:Transforms>
+							<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+								<ec:InclusiveNamespaces
+									xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="" />
+							</ds:Transform>
+						</ds:Transforms>
+						<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+						<ds:DigestValue>/UMRXDXME3nbm6w63PJDCS44KGU=</ds:DigestValue>
+					</ds:Reference>
+				</ds:SignedInfo>
+				<ds:SignatureValue>TBWPeEHOMRvnXAlNrbtFDOb5uqA4dGxQ/rhbnXNA0hoqsTyRSg0XTaHwe85zqs5jlvwzPYY92d9++6Nj6ZBbtdKOCmNYQV3gBNWhMPr4wF2B0ILfHqdQkIa5Z3qYuhd1BnFhmZAIa9gYhOFFs/dUsHQVmYTonOnPL6G673WlufEl3bfLoBXQkwbBq+uOSyxuq2/IiR3ZjZn30Lj7CanISFpxb1hrc2qgz3M8NxJLVocDbeXDsCF/j59eo4EfGZGhAmjoN3vivbRUVLEV3UaNJazcXXkzDXuGj8RvdRSMH2rMaQfpQkdy1nuRClnrTkIPA4tTyBw1aE+K+4KKf5zL0Q==
+				</ds:SignatureValue>
+				<ds:KeyInfo Id="KI-5A5B61515E2939E25613776692000332">
+					<wsse:SecurityTokenReference wsu:Id="STR-5A5B61515E2939E25613776692000333">
+						<ds:X509Data>
+							<ds:X509IssuerSerial>
+								<ds:X509IssuerName>CN=tongtech.com,C=CN</ds:X509IssuerName>
+								<ds:X509SerialNumber>1419400525</ds:X509SerialNumber>
+							</ds:X509IssuerSerial>
+						</ds:X509Data>
+					</wsse:SecurityTokenReference>
+				</ds:KeyInfo>
+			</ds:Signature>
+			<wsu:Timestamp wsu:Id="TS-1">
+				<wsu:Created>2013-08-28T05:53:20.025Z</wsu:Created>
+				<wsu:Expires>2013-08-28T05:58:20.025Z</wsu:Expires>
+			</wsu:Timestamp>
+		</wsse:Security>
+	</SOAP-ENV:Header>
+	<soap:Body
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		wsu:Id="id-2">
+		<xenc:EncryptedData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+			Id="ED-4" Type="http://www.w3.org/2001/04/xmlenc#Content">
+			<xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" />
+			<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+				<wsse:SecurityTokenReference
+					xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+					xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"
+					wsse11:TokenType="http://docs.oasis-open.org/wss/oasis-wss-soap-message-security-1.1#EncryptedKey">
+					<wsse:Reference URI="#EK-5A5B61515E2939E25613776692000674" />
+				</wsse:SecurityTokenReference>
+			</ds:KeyInfo>
+			<xenc:CipherData>
+				<xenc:CipherValue>lTo8oLJKlyg+VSJw7Qs5TPNS5tyFZTjd29Q3EcZ9bdr/UoGRND53kK/oY3HlCCIhxFS5OA5FR0GUbzNsgE5p8j3usMdq0pV1EDchpBWapQSkkvyKl5qBQYrxDRw4M3oCkLbUfIVIGE5OFJCLl1pie/vDuVUNefaxULoyAUVGk08gGI/saZQ3JAtyNi+zb+1v
+				</xenc:CipherValue>
+			</xenc:CipherData>
+		</xenc:EncryptedData>
+	</soap:Body>
+</soap:Envelope>
