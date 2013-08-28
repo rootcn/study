@@ -1,0 +1,7 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:input xmlns:ns2="http://demo.ti.tongtech.com/security/">
+			<in>Input Value!</in>
+		</ns2:input>
+	</soap:Body>
+</soap:Envelope>
